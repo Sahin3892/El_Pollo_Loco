@@ -11,6 +11,7 @@ class World {
   canvas;
   ctx;
   keyboard;
+  camera_x = 0;
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -28,11 +29,15 @@ class World {
     // Löschen erst die Map
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
+    this.ctx.translate(this.camera_x, 0);
+
     // Objekte werden Hinzugefügt
     this.addObjectsToMap(this.backgroundObjects);
     this.addObjectsToMap(this.clouds);
     this.addToMap(this.character);
     this.addObjectsToMap(this.enemies);
+
+    this.ctx.translate(-this.camera_x, 0);
 
     // Draw() wird immer wieder ausgeführt
     let self = this;

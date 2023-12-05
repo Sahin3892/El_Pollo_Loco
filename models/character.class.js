@@ -25,9 +25,10 @@ class Character extends MoveableObject {
       }
 
       if (this.world.keyboard.LEFT) {
-        this.x -= this.speed;
+        this.x -= this.speed * 2; // Geschwindigkeit angepasst
         this.otherDirection = true;
       }
+      this.world.camera_x = -this.x;
     }, 1000 / 60);
 
     setInterval(() => {
