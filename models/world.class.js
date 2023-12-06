@@ -1,17 +1,10 @@
 class World {
   character = new Character();
-  enemies = [new Chicken(), new Chicken(), new Chicken()];
-  clouds = [new Cloud()];
-  backgroundObjects = [
-    new BackgroundObject("img/5_background/layers/air.png", 0),
-    new BackgroundObject("img/5_background/layers/3_third_layer/1.png", 0),
-    new BackgroundObject("img/5_background/layers/2_second_layer/1.png", 0),
-    new BackgroundObject("img/5_background/layers/1_first_layer/1.png", 0),
-  ];
+  level = level1;
   canvas;
   ctx;
   keyboard;
-  camera_x = 0;
+  camera_x = 19
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -32,10 +25,11 @@ class World {
     this.ctx.translate(this.camera_x, 0);
 
     // Objekte werden Hinzugefügt
-    this.addObjectsToMap(this.backgroundObjects);
-    this.addObjectsToMap(this.clouds);
+    this.addObjectsToMap(this.level.backgroundObjects);
+    
     this.addToMap(this.character);
-    this.addObjectsToMap(this.enemies);
+    this.addObjectsToMap(this.level.clouds);
+    this.addObjectsToMap(this.level.enemies);
 
     this.ctx.translate(-this.camera_x, 0);
 
