@@ -25,6 +25,14 @@ class MoveableObject {
     });
   }
 
+  playAnimation(images) {
+    // Walk animation
+    let i = this.currentImage % this.IMAGES_WALKING.length; // let i = 0 % 6;
+    let path = this.images[i];
+    this.img = this.imageCache[path];
+    this.currentImage++;
+  }
+
   moveRight() {
     console.log("Moving right");
   }
