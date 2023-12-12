@@ -4,7 +4,7 @@ class World {
   canvas;
   ctx;
   keyboard;
-  camera_x = 19
+  camera_x = 19;
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -26,7 +26,7 @@ class World {
 
     // Objekte werden Hinzugefügt
     this.addObjectsToMap(this.level.backgroundObjects);
-    
+
     this.addToMap(this.character);
     this.addObjectsToMap(this.level.clouds);
     this.addObjectsToMap(this.level.enemies);
@@ -53,8 +53,9 @@ class World {
       this.ctx.scale(-1, 1);
       mo.x = mo.x * -1;
     }
-    
+
     this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
+
     if (mo.otherDirection) {
       mo.x = mo.x * -1;
       this.ctx.restore();
