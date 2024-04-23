@@ -2,13 +2,14 @@ class Character extends MoveableObject {
     height = 200;
     y = 80;
     speed = 10;
+
     IMAGES_WALKING = [
         "img/2_character_pepe/2_walk/W-21.png",
         "img/2_character_pepe/2_walk/W-22.png",
         "img/2_character_pepe/2_walk/W-23.png",
         "img/2_character_pepe/2_walk/W-24.png",
         "img/2_character_pepe/2_walk/W-25.png",
-        "img/2_character_pepe/2_walk/W-26.png",
+        "img/2_character_pepe/2_walk/W-26.png"
     ];
 
     IMAGES_JUMPING = [
@@ -20,7 +21,7 @@ class Character extends MoveableObject {
         "img/2_character_pepe/3_jump/J-36.png",
         "img/2_character_pepe/3_jump/J-37.png",
         "img/2_character_pepe/3_jump/J-38.png",
-        "img/2_character_pepe/3_jump/J-39.png",
+        "img/2_character_pepe/3_jump/J-39.png"
     ];
 
     IMAGES_DEAD = [
@@ -36,8 +37,8 @@ class Character extends MoveableObject {
     IMAGES_HURT = [
         "img/2_character_pepe/4_hurt/H-41.png",
         "img/2_character_pepe/4_hurt/H-42.png",
-        "img/2_character_pepe/4_hurt/H-43.png",
-    ]
+        "img/2_character_pepe/4_hurt/H-43.png"
+    ];
 
     world;
     walking_sound = new Audio("audio/running.mp3");
@@ -48,7 +49,7 @@ class Character extends MoveableObject {
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_JUMPING);
         this.loadImages(this.IMAGES_DEAD);
-        this.loadImages(this.IMAGES_WALKING);
+        this.loadImages(this.IMAGES_HURT);
         this.applyGravity();
         this.animate();
     }
@@ -76,10 +77,10 @@ class Character extends MoveableObject {
         }, 1000 / 60);
 
         setInterval(() => {
-            if (this.isHurt()) {
-                this.playAnimation(this.IMAGES_HURT);
-            } else if (this.isDead()) {
+            if (this.isDead()) {
                 this.playAnimation(this.IMAGES_DEAD);
+            } else if (this.isHurt()) {
+                this.playAnimation(this.IMAGES_HURT);
             } else if (this.isAboveGround()) {
                 this.playAnimation(this.IMAGES_JUMPING);
             } else {
