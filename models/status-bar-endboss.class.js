@@ -1,6 +1,6 @@
 class StatusBarEndbossClass extends StatusBar {
 
-    IMAGE_ENDBOSS_HEALTH = [
+    IMAGES_ENDBOSS_HEALTH = [
         "img/7_statusbars/2_statusbar_endboss/green.png"
     ];
     constructor() {
@@ -21,7 +21,7 @@ class StatusBarEndbossClass extends StatusBar {
     }
     loadImage(path) {
         // implementation
-        super.loadImage(this.IMAGE_ENDBOSS_HEALTH);
+        super.loadImage(this.IMAGES_ENDBOSS_HEALTH);
     }
 
 }
