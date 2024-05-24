@@ -6,6 +6,7 @@ class World {
     keyboard;
     camera_x = 19;
     statusBar = new StatusBar();
+    bottles = new BottlesClass();
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext("2d");
@@ -32,6 +33,7 @@ class World {
     }
 
     draw() {
+        if(this.level) {
         // Löschen erst die Map
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -45,6 +47,7 @@ class World {
         this.ctx.translate(-this.camera_x, 0);
         // ----- Space for fixed objects -----
         this.addToMap(this.statusBar);
+        this.addToMap(this.bottles);
         this.ctx.translate(this.camera_x, 0);
 
 
@@ -60,6 +63,7 @@ class World {
         requestAnimationFrame(function () {
             self.draw();
         });
+        }
     }
 
     addObjectsToMap(objects) {
