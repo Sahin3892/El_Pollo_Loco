@@ -41,13 +41,13 @@ class World {
 
         // Objekte werden Hinzugefügt
         this.addObjectsToMap(this.level.backgroundObjects);
-
+        this.addObjectsToMap(this.level.bottles);
 
 
         this.ctx.translate(-this.camera_x, 0);
         // ----- Space for fixed objects -----
         this.addToMap(this.statusBar);
-        this.addObjectsToMap(this.level.bottles);
+
         this.ctx.translate(this.camera_x, 0);
 
 
