@@ -40,10 +40,34 @@ class Character extends MoveableObject {
         "img/2_character_pepe/4_hurt/H-43.png"
     ];
 
+    /**
+     * Represents the world variable.
+     * @global
+     * @type {object}
+     * @property {string} name - The name of the world.
+     * @property {number} population - The population of the world.
+     * @property {boolean} isExpanding - Indicates whether the world is expanding or not.
+     * @property {array} continents - The continents present in the world.
+     * @property {function} greet - A function that greets the world.
+     */
     world;
+    /**
+     * Represents the sound played when the character is walking.
+     *
+     * @type {Audio}
+     */
     walking_sound = new Audio("audio/running.mp3");
 
-    // Commit
+
+    /**
+     * Constructor for the Character class.
+     * Loads and initializes character images for walking, jumping, dead, and hurt.
+     * Applies gravity and starts the animation.
+     *
+     * @constructor
+     * @memberof Character
+     * @return {void}
+     */
     constructor() {
         super().loadImage("img/2_character_pepe/2_walk/W-21.png");
         this.loadImages(this.IMAGES_WALKING);
@@ -54,6 +78,14 @@ class Character extends MoveableObject {
         this.animate();
     }
 
+    /**
+     * Animates the character by checking the keyboard inputs, updating the character's position, and playing the corresponding animations.
+     * @memberof Character
+     * @function animate
+     * @example
+     * // Usage
+     * character.animate();
+     */
     animate() {
         setInterval(() => {
             this.walking_sound.pause();
@@ -91,6 +123,13 @@ class Character extends MoveableObject {
         }, 30);
     }
 
+    /**
+     * Sets the vertical speed of the object to 30.
+     *
+     * @method jump
+     * @memberof object
+     * @returns {void} - Does not return any value
+     */
     jump() {
         this.speedY = 30;
     }

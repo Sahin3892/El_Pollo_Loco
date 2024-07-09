@@ -6,7 +6,7 @@ class World {
     keyboard;
     camera_x = 19;
     statusBar = new StatusBar();
-    bottles = new Bottle();
+    statusBarBottle = new StatusBarBottleClass()
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext("2d");
