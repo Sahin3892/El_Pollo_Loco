@@ -13,11 +13,11 @@ class StatusBarBottleClass extends StatusBar {
     constructor() {
         super();
         this.loadImages(this.IMAGES_BOTTLE_BAR);
-        this.y = 0;
-        this.x = 80;
+        this.y = 50;
+        this.x = 40;
         this.width = 200;
         this.height = 80;
-        this.setPercentage(0)
+        this.setPercentage(0);
     }
 
     resolveImageIndex() {
@@ -35,5 +35,4 @@ class StatusBarBottleClass extends StatusBar {
             return 0;
         }
     }
-
 }
