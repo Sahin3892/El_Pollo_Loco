@@ -1,7 +1,7 @@
 class StatusBarBottleClass extends StatusBar {
 
-
-    IMAGES_BOTTLE_BAR = [
+R
+    IMAGES_BAR = [
         "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/0.png",
         "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/20.png",
         "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/40.png",
@@ -12,8 +12,8 @@ class StatusBarBottleClass extends StatusBar {
 
     constructor() {
         super();
-        this.loadImages(this.IMAGES_BOTTLE_BAR);
-        this.y = 50;
+        this.loadImages(this.IMAGES_BAR);
+        this.y = 60;
         this.x = 40;
         this.width = 200;
         this.height = 80;

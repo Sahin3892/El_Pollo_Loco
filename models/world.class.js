@@ -8,6 +8,7 @@ class World {
     statusBar = new StatusBar();
     statusBarBottle = new StatusBarBottleClass()
 
+
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext("2d");
         this.canvas = canvas;
